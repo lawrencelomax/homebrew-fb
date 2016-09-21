@@ -8,6 +8,11 @@ class Fbsimctl < Formula
   depends_on "carthage"
   depends_on :xcode => ["8", :build]
 
+  bottle do
+    cellar :any
+    sha256 "5d67f406b90525e00d22655e0fbe239a3df4b3252dd68e069380f5b3fc3492eb" => :el_capitan_or_later
+  end
+
   def install
     system "./build.sh", "fbsimctl", "build", prefix
   end
